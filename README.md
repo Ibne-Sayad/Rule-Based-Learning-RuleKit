@@ -21,4 +21,4 @@
 ## 📦 Installation
 
 ```bash
-pip install rule-based-learning-rulekit
+pip install git+https://github.com/Ibne-Sayad/Rule-Based-Learning-RuleKit.git
