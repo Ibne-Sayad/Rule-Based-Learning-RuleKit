@@ -9,10 +9,13 @@ authors         = [
   {name = "Ibne Sayad", email = "ibnsaad8772@gmail.com"},
 ]
 dependencies = [
-  "pandas>=2.2",
-  "scikit-learn>=1.5",
-  "scikit-learn-extra>=0.3",   # KModes
-  "rulekit-python>=0.3",
+    "kmodes==0.12.1",
+    "ipython==8.12.3",
+    "jdk==0.0.6",
+    "numpy==2.3.0",
+    "pandas==2.3.0",
+    "rulekit==2.1.24.1",
+    "scikit_learn==1.7.0",
 ]
 
 [project.urls]
