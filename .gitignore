@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+build/
+dist/
+*.egg-info/
+data/
+output/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
