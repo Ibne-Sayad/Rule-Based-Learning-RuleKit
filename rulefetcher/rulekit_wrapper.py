@@ -17,6 +17,8 @@ from rulekit.classification import RuleClassifier
 from rulekit.rules import RuleSet, ClassificationRule
 from rulekit.params import Measures
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="jpype")
 
 class RuleKitWrapper:
     """
