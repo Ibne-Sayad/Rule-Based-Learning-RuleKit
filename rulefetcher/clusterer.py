@@ -3,6 +3,8 @@ import numpy as np
 from kmodes.kmodes import KModes
 from sklearn.tree import DecisionTreeClassifier, export_text
 
+# Rulefetcher Clusterer Module
+# This module provides functionality for clustering categorical data using KModes
 class Clusterer:
     def __init__(self, df: pd.DataFrame, n_clusters: int = 3):
         # Validate input DataFrame and number of clusters
@@ -49,6 +51,7 @@ class Clusterer:
             rules = export_text(tree, feature_names=list(X.columns))
             with open(path, "w") as f:
                 f.write(rules)
-            print("Cluster annotation rules saved to 'cluster_annotation_rules.txt'")
+            # Save the rules to a text file
+            print("Cluster annotation rules saved to 'cluster_annotation_rules.txt'") 
         except Exception as e:
             raise RuntimeError(f"Error generating decision rules: {e}")

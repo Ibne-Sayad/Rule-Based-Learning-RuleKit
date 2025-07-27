@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 
+# Rulefetcher Data Handler Module
+# This module provides functionality for loading, cleaning, and preprocessing data
 class DataHandler:
     def __init__(self, input_path: str):
         self.input_path = input_path
@@ -19,7 +21,7 @@ class DataHandler:
         return self.df
 
     def clean_columns(self):
-        """Cleans column names by stripping whitespace and converting to lowercase."""
+        #Cleans column names by stripping whitespace and converting to lowercase
         if self.df is None:
             raise ValueError("Data not loaded. Call load_data() first.")
 

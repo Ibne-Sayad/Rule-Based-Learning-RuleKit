@@ -80,6 +80,13 @@ def main():
         c2_rules_dict = wrapper.get_cluster_rules("C2")
         print("C2 rules:", c2_rules_dict)
 
+        correlation_rules_dict = wrapper.get_cluster_rules("Correlation")
+        print("Correlation rules:", correlation_rules_dict)
+
+        rss_rules_dict = wrapper.get_cluster_rules("RSS")
+        print("RSS rules:", rss_rules_dict)
+
+
 
     except Exception as e:
         print("Error during execution:", e)

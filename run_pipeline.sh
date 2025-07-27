@@ -8,19 +8,19 @@ VENV_DIR="venv"
 PYTHON="$VENV_DIR/Scripts/python.exe"
 PIP="$PYTHON -m pip"
 
-# === SETUP VENV ===
+# Check if virtual environment exists
 if [ ! -d "$VENV_DIR" ]; then
   echo "🔧 Creating virtual environment..."
   py -m venv "$VENV_DIR" || python -m venv "$VENV_DIR"
 fi
 
-# === INSTALL DEPENDENCIES ===
+#NSTALL DEPENDENCIES
 echo "Installing dependencies..."
 $PYTHON -m ensurepip
 $PIP install --upgrade pip
 $PIP install -r requirements.txt
 
-# === RUN PIPELINE ===
+#RUN PIPELINE
 echo "Running pipeline..."
 $PYTHON pipeline.py \
   --csv "$CSV_PATH" \
@@ -29,6 +29,6 @@ $PYTHON pipeline.py \
 
 echo "Pipeline finished."
 
-# === KEEP WINDOW OPEN ===
+#KEEP WINDOW OPEN
 echo ""
 read -rp "Press ENTER to close this window..."
