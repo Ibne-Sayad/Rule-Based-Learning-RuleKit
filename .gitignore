@@ -9,7 +9,6 @@ venv/
 build/
 dist/
 *.egg-info/
-data/
 output/
 
 # Jupyter
