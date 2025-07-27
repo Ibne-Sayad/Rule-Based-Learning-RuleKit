@@ -114,23 +114,10 @@ class RuleKitWrapper:
         if self.df_arff is None:
             raise RuntimeError("ARFF not loaded – call load_arff() first.")
 
-        # X = (
-        #     self.df_arff.drop(columns=["sample", "patient_id", self.target_column])
-        #     .select_dtypes(include=[np.number])
-        #     .copy()
-        # )
-
         drop_cols = [c for c in ["sample", "patient_id", self.target_column]
                  if c in self.df_arff.columns]
-
-        # Keep BOTH numeric and nominal
+        
         X = self.df_arff.drop(columns=drop_cols).copy()
-
-        # (optional but clean) make sure nominal columns are categorical dtype
-        for c in X.select_dtypes(include=["object"]):
-            X[c] = X[c].astype("category")
-
-
         y = self.df_arff[self.target_column].astype(int)
         mask = y.notna()
         return X[mask], y[mask]
