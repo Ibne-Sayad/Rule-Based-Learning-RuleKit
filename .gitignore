@@ -9,7 +9,7 @@ venv/
 build/
 dist/
 *.egg-info/
-output/
+test_data/
 
 # Jupyter
 .ipynb_checkpoints/

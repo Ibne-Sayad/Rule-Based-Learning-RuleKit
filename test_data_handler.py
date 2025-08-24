@@ -33,33 +33,33 @@ columns_to_drop = ['redaction']
 # === EXECUTION ===
 def main():
     try:
-        # Step 1: Load and prepare data
-        handler = DataHandler(csv_file_path)
-        df = handler.load_data()
-        df = handler.clean_columns()
-        df = handler.rename_columns(rename_columns)
-        df = handler.drop_columns(columns_to_drop)
-        df = handler.handle_missing_values("keep")
-        df = handler.encode_categoricals()
-        print("Data preprocessed successfully")
+        # # Step 1: Load and prepare data
+        # handler = DataHandler(csv_file_path)
+        # df = handler.load_data()
+        # df = handler.clean_columns()
+        # df = handler.rename_columns(rename_columns)
+        # df = handler.drop_columns(columns_to_drop)
+        # df = handler.handle_missing_values("keep")
+        # df = handler.encode_categoricals()
+        # print("Data preprocessed successfully")
 
-        # Step 2: Apply clustering
-        clusterer = Clusterer(df, n_clusters=3)
-        clustered_df = clusterer.apply_kmodes()
-        print("KModes clustering applied")
+        # # Step 2: Apply clustering
+        # clusterer = Clusterer(df, n_clusters=3)
+        # clustered_df = clusterer.apply_kmodes()
+        # print("KModes clustering applied")
 
-        # Step 3: Save clustered data
-        clusterer.save_clusters(cluster_output_path)
-        print(f"Clustered data saved to {cluster_output_path}")
+        # # Step 3: Save clustered data
+        # clusterer.save_clusters(cluster_output_path)
+        # print(f"Clustered data saved to {cluster_output_path}")
 
-        # Step 4: Print and save summary
-        summary = clusterer.get_cluster_summary()
-        print("Cluster Summary:\n", summary)
+        # # Step 4: Print and save summary
+        # summary = clusterer.get_cluster_summary()
+        # print("Cluster Summary:\n", summary)
 
-        clusterer.annotate_clusters(annotation_rules_path, max_depth=3)
-        print("Cluster annotation rules generated")
+        # clusterer.annotate_clusters(annotation_rules_path, max_depth=3)
+        # print("Cluster annotation rules generated")
 
-        wrapper = RuleKitWrapper("./data/clustered_output.csv", target_column="cluster")
+        wrapper = RuleKitWrapper("./data/clustered_output - Gender_Female_Age_less_50_VitalStat_Dead.csv", target_column="cluster")
 
         # 1) Load & clean
         wrapper.load_and_clean()
@@ -81,7 +81,7 @@ def main():
         print("C2 rules:", c2_rules_dict)
 
         correlation_rules_dict = wrapper.get_cluster_rules("Correlation")
-        print("Correlation rules:", correlation_rules_dict)
+        print("\nCorrelation rules:", correlation_rules_dict)
 
         rss_rules_dict = wrapper.get_cluster_rules("RSS")
         print("RSS rules:", rss_rules_dict)
