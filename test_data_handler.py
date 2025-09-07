@@ -59,7 +59,7 @@ def main():
         # clusterer.annotate_clusters(annotation_rules_path, max_depth=3)
         # print("Cluster annotation rules generated")
 
-        wrapper = RuleKitWrapper("./data/clustered_output - Gender_Female_Age_less_50_VitalStat_Dead.csv", target_column="cluster")
+        wrapper = RuleKitWrapper("./data/clustered_output - VitalStatus_Dead.csv", target_column="cluster")
 
         # 1) Load & clean
         wrapper.load_and_clean()
@@ -84,7 +84,7 @@ def main():
         print("\nCorrelation rules:", correlation_rules_dict)
 
         rss_rules_dict = wrapper.get_cluster_rules("RSS")
-        print("RSS rules:", rss_rules_dict)
+        print("\nRSS rules:", rss_rules_dict)
 
 
 
