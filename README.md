@@ -1,6 +1,6 @@
 <div align="center">
   <!-- Optional: replace with your project logo -->
-  <img src="https://raw.githubusercontent.com/Ibne-Sayad/Rule-Based-Learning-RuleKit/main/docs/assets/logo.svg" width="260" alt="RuleFetcher Logo">
+  <img src="https://github.com/Ibne-Sayad/Rule-Based-Learning-RuleKit/blob/test/readmeimg/RuleFetcherlogo.png" width="260" alt="RuleFetcher Logo">
   <div><b>RuleFetcher</b></div>
 </div>
 
@@ -28,7 +28,7 @@ By combining unsupervised clustering with rule-based explanation, RuleFetcher of
 ## Workflow
 <div align="center">
   <!-- Optional: replace with your project logo -->
-  <img src="https://raw.githubusercontent.com/Ibne-Sayad/Rule-Based-Learning-RuleKit/main/docs/assets/logo.svg" width="260" alt="RuleFetcher Logo">
+  <img src="https://github.com/Ibne-Sayad/Rule-Based-Learning-RuleKit/blob/test/readmeimg/Workflow.png" width="260" alt="RuleFetcher Logo">
   <div><b>Workflow</b></div>
 </div>
 
