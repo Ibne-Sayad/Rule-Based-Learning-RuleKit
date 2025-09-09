@@ -81,7 +81,7 @@ RuleFetcher helps you:
 
 ## 📦 Installation
 
-### Option A — Install from GitHub (recommended for now)
+### Install the package directly from GitHub
 
 ```bash
 pip install "git+https://github.com/Ibne-Sayad/Rule-Based-Learning-RuleKit.git"
