@@ -96,12 +96,19 @@ pip install "git+https://github.com/Ibne-Sayad/Rule-Based-Learning-RuleKit.git"
 from rulefetcher.data_handler import DataHandler
 from rulefetcher.clusterer import Clusterer
 from rulefetcher.rulekit_wrapper import RuleKitWrapper
+import os
+
+
+# Directory name
+directory_name = "outputdata"
+# Create directory
+os.makedirs(directory_name, exist_ok=True)
 
 # === Step 1: Load and preprocess data ===
-handler = DataHandler("path/to/your_dataset.csv")
+handler = DataHandler("data/clustered_output.csv") # Your input CSV file
 df = handler.load_data()
 df = handler.clean_columns()
-df = handler.rename_columns({...})         # Optional renaming
+# df = handler.rename_columns({...})         # Optional renaming
 df = handler.handle_missing_values("keep") # Keep or drop NAs
 df = handler.encode_categoricals()
 
@@ -109,19 +116,21 @@ df = handler.encode_categoricals()
 # === Skip this step if your dataset has clustering  ===
 clusterer = Clusterer(df, n_clusters=4)
 clustered_df = clusterer.apply_kmodes()
-clusterer.save_clusters("path/to/clustered_output.csv")
-clusterer.annotate_clusters("path/to/cluster_rules.txt")
+
+clusterer.save_clusters("outputdata/clustered_output.csv")
+clusterer.annotate_clusters("outputdata/cluster_rules.txt")
 
 # === Step 3: Rule extraction using RuleKit ===
-wrapper = RuleKitWrapper("path/to/clustered_output.csv", target_column="cluster")
+wrapper = RuleKitWrapper("outputdata/clustered_output.csv", target_column="cluster")
 wrapper.load_and_clean()
-wrapper.write_arff("path/to/data.arff")
+wrapper.write_arff("outputdata/data.arff")
 wrapper.load_arff()
 wrapper.train_all()
 
 # === Step 4: Inspect results ===
 model_stats, metrics = wrapper.summary_frames()
 rules = wrapper.get_cluster_rules("C2")  # Or "Correlation", "RSS", etc.
+print("C2 rules:", rules)
 
 ```
 ---
